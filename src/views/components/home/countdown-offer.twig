@@ -1,0 +1,70 @@
+{# 
+  عداد التخفيضات
+  Salla Component Name: countdown-offer
+#}
+
+<style>
+.zab-countdown{background:#1C2B47;padding:80px 20px;margin:40px 0;border-radius:16px;position:relative;overflow:hidden;text-align:center}
+.zab-countdown::before,.zab-countdown::after{content:'';position:absolute;border:1.5px solid #C9936B;border-radius:50%;opacity:0.15}
+.zab-countdown::before{top:-60px;right:-60px;width:240px;height:240px}
+.zab-countdown::after{bottom:-60px;left:-60px;width:200px;height:200px}
+.zab-countdown__container{max-width:900px;margin:0 auto;position:relative;z-index:2}
+.zab-countdown__eyebrow{color:#C9936B;font-size:14px;letter-spacing:4px;font-weight:700;margin-bottom:18px}
+.zab-countdown__title{font-size:38px;color:#fff;font-weight:800;margin-bottom:14px;line-height:1.3}
+.zab-countdown__desc{color:#fff;opacity:0.85;font-size:16px;margin-bottom:36px}
+.zab-countdown__timer{display:flex;justify-content:center;gap:16px;margin-bottom:36px;flex-wrap:wrap}
+.zab-countdown__box{background:rgba(255,255,255,0.05);border:1.5px solid #C9936B;border-radius:12px;padding:20px 18px;min-width:90px}
+.zab-countdown__number{color:#C9936B;font-size:40px;font-weight:900;line-height:1;margin-bottom:6px}
+.zab-countdown__label{color:#fff;font-size:12px;letter-spacing:2px;font-weight:600}
+.zab-countdown__btn{display:inline-block;background:#C9936B;color:#fff!important;padding:18px 42px;border-radius:8px;font-weight:800;font-size:15px;letter-spacing:1px;text-decoration:none;transition:transform .3s}
+.zab-countdown__btn:hover{transform:translateY(-2px);color:#fff}
+@media(max-width:768px){.zab-countdown{padding:50px 20px}.zab-countdown__title{font-size:24px}.zab-countdown__number{font-size:30px}.zab-countdown__box{min-width:70px;padding:14px 10px}}
+</style>
+
+<section class="zab-countdown">
+  <div class="zab-countdown__container">
+    <div class="zab-countdown__eyebrow">✦ عرض لفترة محدودة</div>
+    <h2 class="zab-countdown__title">خصم 25% على جميع منتجات العود</h2>
+    <p class="zab-countdown__desc">سارع قبل نفاد الكمية</p>
+    
+    <div class="zab-countdown__timer" id="zabCountdownTimer" data-end-date="2026-12-31T23:59:59">
+      <div class="zab-countdown__box">
+        <div class="zab-countdown__number" id="zabDays">00</div>
+        <div class="zab-countdown__label">يوم</div>
+      </div>
+      <div class="zab-countdown__box">
+        <div class="zab-countdown__number" id="zabHours">00</div>
+        <div class="zab-countdown__label">ساعة</div>
+      </div>
+      <div class="zab-countdown__box">
+        <div class="zab-countdown__number" id="zabMinutes">00</div>
+        <div class="zab-countdown__label">دقيقة</div>
+      </div>
+      <div class="zab-countdown__box">
+        <div class="zab-countdown__number" id="zabSeconds">00</div>
+        <div class="zab-countdown__label">ثانية</div>
+      </div>
+    </div>
+
+    <a href="/offers" class="zab-countdown__btn">تسوق العروض ←</a>
+  </div>
+</section>
+
+<script>
+(function(){
+  var timer=document.getElementById('zabCountdownTimer');
+  if(!timer)return;
+  var endDate=new Date(timer.getAttribute('data-end-date')).getTime();
+  var d=document.getElementById('zabDays'),h=document.getElementById('zabHours'),m=document.getElementById('zabMinutes'),s=document.getElementById('zabSeconds');
+  function pad(n){return String(n).padStart(2,'0')}
+  function tick(){
+    var diff=endDate-new Date().getTime();
+    if(diff<0){d.textContent=h.textContent=m.textContent=s.textContent='00';return}
+    d.textContent=pad(Math.floor(diff/(1000*60*60*24)));
+    h.textContent=pad(Math.floor((diff%(1000*60*60*24))/(1000*60*60)));
+    m.textContent=pad(Math.floor((diff%(1000*60*60))/(1000*60)));
+    s.textContent=pad(Math.floor((diff%(1000*60))/1000));
+  }
+  tick();setInterval(tick,1000);
+})();
+</script>

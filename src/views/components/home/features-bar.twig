@@ -1,0 +1,48 @@
+{# 
+  شريط المميزات
+  Salla Component Name: features-bar
+#}
+
+<style>
+.zab-features{padding:50px 20px;background:#fff;border-top:1px solid #EFEBE4;border-bottom:1px solid #EFEBE4;margin:30px 0}
+.zab-features__container{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.zab-features__item{display:flex;gap:18px;align-items:center}
+.zab-features__icon{width:64px;height:64px;background:#F9F6F0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#C9936B;flex-shrink:0;font-size:28px}
+.zab-features__title{color:#1C2B47;font-size:17px;font-weight:800;margin-bottom:4px}
+.zab-features__desc{color:#8A8F9C;font-size:14px;font-weight:500}
+@media(max-width:992px){.zab-features__container{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:576px){.zab-features__container{grid-template-columns:1fr}}
+</style>
+
+<section class="zab-features">
+  <div class="zab-features__container">
+    <div class="zab-features__item">
+      <div class="zab-features__icon"><i class="sicon-shield-check"></i></div>
+      <div>
+        <div class="zab-features__title">منتجات أصلية</div>
+        <div class="zab-features__desc">ضمان الأصالة والجودة</div>
+      </div>
+    </div>
+    <div class="zab-features__item">
+      <div class="zab-features__icon"><i class="sicon-rocket"></i></div>
+      <div>
+        <div class="zab-features__title">شحن سريع</div>
+        <div class="zab-features__desc">توصيل خلال 24 ساعة</div>
+      </div>
+    </div>
+    <div class="zab-features__item">
+      <div class="zab-features__icon"><i class="sicon-lock"></i></div>
+      <div>
+        <div class="zab-features__title">دفع آمن</div>
+        <div class="zab-features__desc">خصوصية تامة مضمونة</div>
+      </div>
+    </div>
+    <div class="zab-features__item">
+      <div class="zab-features__icon"><i class="sicon-chatbubbles"></i></div>
+      <div>
+        <div class="zab-features__title">دعم 24/7</div>
+        <div class="zab-features__desc">تواصل في أي وقت</div>
+      </div>
+    </div>
+  </div>
+</section>

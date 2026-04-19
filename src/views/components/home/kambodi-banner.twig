@@ -1,0 +1,32 @@
+{# 
+  بانر العود الكمبودي
+  Salla Component Name: kambodi-banner
+#}
+
+<style>
+.zab-banner{padding:80px 20px;margin:40px 0;border-radius:16px;overflow:hidden;background:#1C2B47;position:relative}
+.zab-banner__container{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.zab-banner__eyebrow{color:#C9936B;font-size:14px;letter-spacing:4px;font-weight:700;margin-bottom:16px}
+.zab-banner__title{font-size:44px;font-weight:800;margin-bottom:20px;line-height:1.2;color:#fff}
+.zab-banner__desc{font-size:16px;line-height:1.9;margin-bottom:32px;opacity:0.9;color:#fff}
+.zab-banner__btn{display:inline-block;background:#C9936B;color:#fff!important;padding:16px 36px;border-radius:8px;font-weight:700;font-size:15px;letter-spacing:1px;text-decoration:none;transition:transform .3s}
+.zab-banner__btn:hover{transform:translateY(-2px);color:#fff}
+.zab-banner__image img{width:100%;border-radius:12px}
+@media(max-width:768px){.zab-banner{padding:50px 20px}.zab-banner__container{grid-template-columns:1fr}.zab-banner__title{font-size:28px}}
+</style>
+
+<section class="zab-banner">
+  <div class="zab-banner__container">
+    <div class="zab-banner__content">
+      <div class="zab-banner__eyebrow">✦ عرض حصري</div>
+      <h2 class="zab-banner__title">العود الكمبودي الفاخر</h2>
+      <p class="zab-banner__desc">من أجود أنواع العود في العالم، نقاوة وعبق يدوم طويلاً يليق بالمناسبات الخاصة</p>
+      <a href="/" class="zab-banner__btn">تسوق الآن ←</a>
+    </div>
+    <div class="zab-banner__image">
+      <div style="background:linear-gradient(135deg,#3d2817 0%,#1a0f08 100%);height:300px;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1.5px solid #C9936B">
+        <div style="color:#C9936B;font-size:120px;opacity:0.4">♨</div>
+      </div>
+    </div>
+  </div>
+</section>
